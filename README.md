@@ -15,8 +15,7 @@
       本地的根目录即file:// URI是不安全的操作，直接访问会抛出FileUriExposedExCeption异常，这就意味着在Android7.0
       以前我们访问相机拍照存储时，如果使用URI的方式直接存储剪裁图片就会造成这个异常，那么如何解决这个问题呢？
 
-      本文Demo为大家提供一个参考，此demo只提供了第二种方法
-
+     
 
       方法一：
 
@@ -104,16 +103,17 @@
      就表示共享整个SD卡，也可指定对应的SDcard下的文件目录，根据需求自行定义。接下来就是调用系统相机进行拍照了,
      大家可以查看提供的代码。
 
-      注：PhotoUtils是对拍照和相册获取照片的封装
+      `注：PhotoUtils是对拍照和相册获取照片的封装`
 
-      注：PhoneSystemUtils是对拍照未赋予权限情况针对手机动态提示权限申请
+      `注：PhoneSystemUtils是对拍照未赋予权限情况针对手机动态提示权限申请`
 
+      `注：本文Demo为大家提供一个参考，两种方法在代码中都有体现`
 
 
       分享此demo也是在工作中遇到这样的问题，自己也是通过查看一些大神的分享，在这里我把这些问题总结到个人页，也是方便查看，同时也希望可以帮助到需要的人。谢谢！
       
       在此也为大家推广一个比较好的框架，一个开发App秒载数据支持http和https请求，以及框架支持其它一些功能。
-      链接地址：https://github.com/LeWaves/App-FrameWork
+     ` 链接地址：https://github.com/LeWaves/App-FrameWork`
 
       联系人：Waves
       E-mail: LeWaves@yeah.net
