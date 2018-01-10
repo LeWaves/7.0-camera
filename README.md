@@ -77,7 +77,7 @@
 
      2.provider标签里的 android:name的值是FileProvider的包名+类名为固定值。android:authorities的值相当于一个标志，
      当我们使用FileProvider的getUriForFile方法时的一个参数需和清单文件注册时的保持一致，
-     这里我使用的是:com.zz.fileprovider可自行定义。exported:要求必须为false，为true则会报安全异常。
+     这里我使用的是:cn.waves.fileprovider可自行定义。exported:要求必须为false，为true则会报安全异常。
      grantUriPermissions:true，表示授予 URI 临时访问权限。
      <meta-data />标签里面是用来指定共享的路径。 android:resource="@xml/file_paths"就是我们的共享路径配置的xml文件
 
@@ -110,7 +110,10 @@
 
 
 
-      分享此demo也是在工作中遇到这样的问题，方便查看，同时也希望可以帮助到需要的人。谢谢！
+      分享此demo也是在工作中遇到这样的问题，自己也是通过查看一些大神的分享，在这里我把这些问题总结到个人页，也是方便查看，同时也希望可以帮助到需要的人。谢谢！
+      
+      在此也为大家推广一个比较好的框架，一个开发App秒载数据支持http和https请求，以及框架支持其它一些功能。
+      链接地址：https://github.com/LeWaves/App-FrameWork
 
-    联系人：Waves
-    E-mail: LeWaves@yeah.net
+      联系人：Waves
+      E-mail: LeWaves@yeah.net
