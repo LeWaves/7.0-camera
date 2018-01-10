@@ -72,10 +72,11 @@ public class MainActivity extends AppCompatActivity {
         } else {//有权限直接调用系统相机拍照
             if (hasSdcard()) {
                 imageUri = Uri.fromFile(fileUri);
-               //通过FileProvider创建一个content类型的Uri
+               /* 为添加IApplication处理，需要添加此处代码
+                 //通过FileProvider创建一个content类型的Uri
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     imageUri = FileProvider.getUriForFile(this, "cn.waves.fileprovider", fileUri);
-                }
+                }*/
                 PhotoUtils.takePicture(this, imageUri, CODE_CAMERA_REQUEST);
             } else {
                 Toast.makeText(this, "设备没有SD卡！",Toast.LENGTH_SHORT).show();
@@ -107,9 +108,11 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if (hasSdcard()) {
                         imageUri = Uri.fromFile(fileUri);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                            imageUri = FileProvider.getUriForFile(this, "cn.waves.fileprovider", fileUri);//通过FileProvider创建一个content类型的Uri
-
+                        /* 为添加IApplication处理，需要添加此处代码
+                          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+                            imageUri = FileProvider.getUriForFile(this, "cn.waves.fileprovider", fileUri);
+                            //通过FileProvider创建一个content类型的Uri
+                         */
                         PhotoUtils.takePicture(this, imageUri, CODE_CAMERA_REQUEST);
                     } else {
                         Toast.makeText(this, "设备没有SD卡！",Toast.LENGTH_SHORT).show();
@@ -151,9 +154,10 @@ public class MainActivity extends AppCompatActivity {
                     if (hasSdcard()) {
                         cropImageUri = Uri.fromFile(fileCropUri);
                         Uri newUri = Uri.parse(PhotoUtils.getPath(this, data.getData()));
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                         /* 为添加IApplication处理，需要添加此处代码
+                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                             newUri = FileProvider.getUriForFile(this, "cn.waves.fileprovider", new File(newUri.getPath()));
-                        }
+                        }*/
                         PhotoUtils.cropImageUri(this, newUri, cropImageUri, 1, 1, OUTPUT_X, OUTPUT_Y,CODE_RESULT_REQUEST);
                     } else {
                         Toast.makeText(this, "设备没有SD卡！",Toast.LENGTH_SHORT).show();
